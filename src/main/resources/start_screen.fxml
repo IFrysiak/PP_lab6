@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.pp_lab6.StartScreenController">
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <ImageView fx:id="logoImageView" fitHeight="142" fitWidth="668">
+                <image>
+                    <Image url="@logo-pwr.png"/>
+                </image>
+            </ImageView>
+            <Label text="Aplikacja JavaFX Lab 6" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <Label text="Witaj w aplikacji" style="-fx-font-size: 16px;"/>
+
+            <Button fx:id="loadImageButton" text="Wczytaj obraz" onAction="#handleLoadImage"/>
+
+            <ImageView fx:id="imagePreview" fitHeight="200" fitWidth="300" preserveRatio="true"/>
+
+            <HBox spacing="10" alignment="CENTER">
+                <ComboBox fx:id="operationComboBox" promptText="Wybierz operację"/>
+                <Button fx:id="executeButton" text="Wykonaj" onAction="#handleExecute"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="resizeImageButton" text="Skaluj obraz" onAction="#handleResizeImage"/>
+                <Button fx:id="rotateLeftButton" text="&lt;" onAction="#handleRotateLeft"/>
+                <Button fx:id="rotateRightButton" text="&gt;" onAction="#handleRotateRight"/>
+            </HBox>
+            <Button fx:id="saveImageButton" text="Zapisz obraz" onAction="#handleSaveImage"/>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <Label text="Autor: Igor Frysiak 272548" style="-fx-padding: 10; -fx-font-size: 12px;" alignment="CENTER"/>
+    </bottom>
+</BorderPane>
